@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ul{
+list-style-type: circle;
+}
+</style>
+</head>
+<body>
+<ul></ul>
+<script src="util.js"></script>
+<script>
+writeColor("자바스크립트 실습(5)","h1","blue");
+var arr=[10,5,7,21,4,8,18];
+function getMaxValue(ary){
+	var max=ary[0];
+	for(let i in ary){
+		if(max<ary[i]){
+			max=ary[i];
+			
+		}
+	}
+	return max;
+}
+function getMinValue(ary){
+	var min=ary[0];
+	for(let i in ary){
+		if(min>ary[i]){
+			min=ary[i];
+			
+		}
+	}
+	return min;
+}
+function getSum(ary){
+	var sum=0;
+	for(let i in ary){
+		sum+=ary[i];
+	}
+	return sum;
+}
+function getCountOddNum(ary){
+	let sum=0;
+	for(let i in ary){
+		if(ary[i]%2==1){
+			sum++;
+		}
+	}
+	return sum;
+}
+function getCountEvenNum(ary){
+	let sum=0;
+	for(let i in ary){
+		if(ary[i]%2==0){
+			sum++;
+		}
+	}
+	return sum;
+}
+
+writeColor("모든 원소의 합 : "+getSum(arr),"h2","red");
+document.getElementsByTagName("ul")[0].textContent = write("최대값 : "+getMaxValue(arr),"li");
+document.getElementsByTagName("ul")[0].textContent = write("최솟값 : "+getMinValue(arr),"li");
+document.getElementsByTagName("ul")[0].textContent = write("짝수의 갯수 : "+getCountOddNum(arr),"li");
+document.getElementsByTagName("ul")[0].textContent = write("홀수의 갯수 : " +getCountEvenNum(arr),"li");
+</script>
+
+</body>
+</html>
